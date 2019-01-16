@@ -1,2 +1,3 @@
-./srs/trunk/objs/srs -c /srs/trunk/conf/srs.conf
+cd /srs/trunk
+./objs/srs -c conf/srs.conf
 top
