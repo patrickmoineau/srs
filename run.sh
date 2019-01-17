@@ -1,5 +1,6 @@
+cd /srs/trunk/
 echo Starting SRS...
-/srs/trunk/objs/srs -c /srs/trunk/conf/srs.conf
+objs/srs -c conf/srs.conf
 echo Started SRS.
-echo Printing tail -f /srs/trunk/objs/srs.log
-tail -f /srs/trunk/objs/srs.log
+echo Printing tail -f objs/srs.log
+tail -f objs/srs.log
