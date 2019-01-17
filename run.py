@@ -1,6 +1,8 @@
 import os
 
-os.popen('./srs/trunk/objs/srs -c /srs/trunk/conf/srs.conf')
+os.popen('/srs/run.sh')
 
 while True:
     print('')
+    time.sleep(600)
+print("Done")
