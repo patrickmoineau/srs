@@ -1,9 +1,11 @@
 import os
 import time
 
-os.popen('/srs/run.sh')
+print("Starting SRS...")
+os.popen('/srs/trunk/objs/srs -c /srs/trunk/conf/srs.conf')
+print("Started SRS.")
 
 while True:
-    print('')
     time.sleep(600)
+
 print("Done")
