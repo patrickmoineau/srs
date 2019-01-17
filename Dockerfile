@@ -9,6 +9,7 @@ RUN apt install python -y
 RUN apt install git -y
 RUN cd / && git clone -b testing --single-branch https://github.com/patrickmoineau/srs.git
 RUN cd srs/trunk && ./configure && make
+RUN apt upgrade -y
 RUN apt-get -qy autoremove
 RUN chmod +x /srs/run.sh
 CMD ["python", "/srs/run.py"]
