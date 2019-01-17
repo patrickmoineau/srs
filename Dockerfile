@@ -2,14 +2,5 @@ FROM ubuntu
 EXPOSE 8080
 EXPOSE 1985
 EXPOSE 1935
-RUN apt update
-RUN apt install sudo -y
-RUN apt install ffmpeg -y
-RUN apt install python -y
-RUN apt install git -y
-RUN cd / && git clone -b testing --single-branch https://github.com/patrickmoineau/srs.git
-RUN cd srs/trunk && ./configure && make
-RUN apt upgrade -y
-RUN apt-get -qy autoremove
-RUN chmod +x /srs/run.sh
-CMD ["python", "/srs/run.py"]
+RUN apt update && apt upgrade -y && apt install sudo python ffmpeg git ca-certificates -y --no-install-recommends && cd / && git clone -b testing --single-branch https://github.com/patrickmoineau/srs.git && cd srs/trunk && ./configure && make && apt autoremove git gcc gpp make  -y && apt autoremove -y && apt autoclean -y && apt-get clean && rm -rf /var/lib/apt/lists/*
+CMD ["sh", "/srs/run.sh"]
